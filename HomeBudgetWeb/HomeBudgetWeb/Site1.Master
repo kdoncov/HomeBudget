@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="HomeBudgetWeb.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link rel="stylesheet" href="Content/MyStyle.css" />    <link rel="stylesheet" href="Content/normalize.css" />
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div>
+                <h2>Home budget</h2>
+            </div>
+            <div>
+                <ul class="menu-list">
+                    <li><a runat="server" href="~/Rashodi">RASHODI</a></li>
+                    <li><a runat="server" href="~/Prihodi">PRIHODI</a></li>
+                    <li><a runat="server" href="~/Saldo">SALDO</a></li>
+                </ul>
+            </div>
+        </header>
+        <aside>
+            <ul class="aside-list">
+            <li><a href="#">Rashodi</a></li>
+                <ul class="nested-list">
+                    <li><a href="#">Mesecni rashodi</a></li>
+                    <li><a href="#">Godisnji rashodi</a></li>
+                    <li><a href="#">Vrste rashoda</a></li>
+                </ul>
+            <li><a href="#">Prihodi</a></li>
+                <ul class="nested-list">
+                <li><a href="#"> - Mesecni prihodi</a></li>
+                    <li><a href="#">Godisnji prihodi</a></li>
+                    <li><a href="#">Vrste prihoda</a></li>
+                </ul>
+            <li><a href="#">Saldo</a></li>
+                <ul class="nested-list">
+                    <li><a href="#">Mesecni saldo</a></li>
+                    <li><a href="#">Godisnji saldo</a></li>
+                </ul>
+        </ul>
+        </aside>
+        <article>
+            <asp:ContentPlaceHolder ID="MainPlaceholder" runat="server">
+            </asp:ContentPlaceHolder>
+        </article>
+
+        <footer>
+            <p>kafenko</p>
+        </footer>
+                        
+               
+    </form>
+</body>
+</html>
