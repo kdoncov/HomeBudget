@@ -12,6 +12,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="KorisnikLogIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KorisnikLogInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KorisnikLogInResult" type="tns:Korisnik" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Korisnik">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prezime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -20,10 +42,20 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
+  <wsdl:message name="KorisnikLogInSoapIn">
+    <wsdl:part name="parameters" element="tns:KorisnikLogIn" />
+  </wsdl:message>
+  <wsdl:message name="KorisnikLogInSoapOut">
+    <wsdl:part name="parameters" element="tns:KorisnikLogInResponse" />
+  </wsdl:message>
   <wsdl:portType name="HomeBudgetWebServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KorisnikLogIn">
+      <wsdl:input message="tns:KorisnikLogInSoapIn" />
+      <wsdl:output message="tns:KorisnikLogInSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="HomeBudgetWebServiceSoap" type="tns:HomeBudgetWebServiceSoap">
@@ -37,11 +69,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KorisnikLogIn">
+      <soap:operation soapAction="http://tempuri.org/KorisnikLogIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="HomeBudgetWebServiceSoap12" type="tns:HomeBudgetWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KorisnikLogIn">
+      <soap12:operation soapAction="http://tempuri.org/KorisnikLogIn" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

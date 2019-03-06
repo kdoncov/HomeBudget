@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeBudgetWeb.DAL", "HomeBu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeBudgetWeb.WS", "HomeBudgetWeb.WS\HomeBudgetWeb.WS.csproj", "{22112D6D-D24F-41A1-82CC-6350C287F3B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeBudgetWeb.DataObjects", "HomeBudgetWeb.DataObjects\HomeBudgetWeb.DataObjects.csproj", "{3D78A935-828D-41A4-B725-7D2DEF0D2088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeBudgetWeb.Common", "HomeBudgetWeb.Common\HomeBudgetWeb.Common.csproj", "{E97DA3E9-3CB3-45E1-8867-DEC47F6D6794}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +40,14 @@ Global
 		{22112D6D-D24F-41A1-82CC-6350C287F3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22112D6D-D24F-41A1-82CC-6350C287F3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22112D6D-D24F-41A1-82CC-6350C287F3B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D78A935-828D-41A4-B725-7D2DEF0D2088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D78A935-828D-41A4-B725-7D2DEF0D2088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D78A935-828D-41A4-B725-7D2DEF0D2088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D78A935-828D-41A4-B725-7D2DEF0D2088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97DA3E9-3CB3-45E1-8867-DEC47F6D6794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97DA3E9-3CB3-45E1-8867-DEC47F6D6794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97DA3E9-3CB3-45E1-8867-DEC47F6D6794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97DA3E9-3CB3-45E1-8867-DEC47F6D6794}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HomeBudgetWeb.BL;
+using HomeBudgetWeb.DataObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,9 +20,10 @@ namespace HomeBudgetWeb.WS
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public Korisnik KorisnikLogIn(string email, string password)
         {
-            return "Hello World";
+            KorisnikBL korisnikBL = new KorisnikBL();
+            return korisnikBL.LogIn(email, password);
         }
     }
 }

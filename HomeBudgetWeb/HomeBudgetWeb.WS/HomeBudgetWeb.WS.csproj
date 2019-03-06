@@ -91,6 +91,10 @@
       <Project>{cc9f728d-451c-410f-a4d1-18c47c0969db}</Project>
       <Name>HomeBudgetWeb.BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HomeBudgetWeb.DataObjects\HomeBudgetWeb.DataObjects.csproj">
+      <Project>{3d78a935-828d-41a4-b725-7d2def0d2088}</Project>
+      <Name>HomeBudgetWeb.DataObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
