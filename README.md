@@ -1,2 +1,2 @@
 # HomeBudget
-home budget web app
+Web aplikacija za vođenje kućnog budžeta
