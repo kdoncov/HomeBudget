@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HomeBudgetWeb.Common;
+using HomeBudgetWeb.Common.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -26,13 +28,11 @@ namespace HomeBudgetWeb.DataObjects
         {
         }
 
-        /// <summary>
-        /// Initializes a new instance of the Korisnik class and populates properties from data reader.
-        /// </summary>
-        /// <param name="reader">SQL data reader</param>
-        public Korisnik(IDataReader reader)
+        public Korisnik(IDataRecord dataRecord)
         {
-            this.LoadFromReader(reader);
+            mID = BizHelper.GetValue(dataRecord, "IDKorisnik", TypeDefaultValue.IntDefaultValue);
+            mIme = BizHelper.GetValue(dataRecord, "Ime", TypeDefaultValue.StringDefaultValue);
+            mPrezime = BizHelper.GetValue(dataRecord, "Prezime", TypeDefaultValue.StringDefaultValue);
         }
 
         #endregion Constructors
@@ -60,19 +60,6 @@ namespace HomeBudgetWeb.DataObjects
         #endregion Properties
 
         #region Non-virtual methods
-
-        protected void LoadFromReader(IDataReader reader)
-        {
-            if (reader != null && !reader.IsClosed)
-            {
-                //ID = GetValueHelper.GetValue<long>(reader, "KorisnikID");
-                //Ime = GetValueHelper.GetValue<string>(reader, "Ime");
-                //Prezime = GetValueHelper.GetValue<string>(reader, "Prezime");
-                ID = (long)reader["KorisnikID"];
-                Ime = reader["Ime"].ToString();
-                Prezime = reader["Prezime"].ToString();
-            }
-        }
 
         #endregion Non-virtual methods
     }

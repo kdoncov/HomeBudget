@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Information.cs" />
     <Compile Include="Korisnik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeBudgetWeb.Common\HomeBudgetWeb.Common.csproj">
+      <Project>{e97da3e9-3cb3-45e1-8867-dec47f6d6794}</Project>
+      <Name>HomeBudgetWeb.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

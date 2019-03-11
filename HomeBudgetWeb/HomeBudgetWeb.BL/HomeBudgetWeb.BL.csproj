@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HomeBudgetWeb.Common\HomeBudgetWeb.Common.csproj">
+      <Project>{e97da3e9-3cb3-45e1-8867-dec47f6d6794}</Project>
+      <Name>HomeBudgetWeb.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HomeBudgetWeb.DAL\HomeBudgetWeb.DAL.csproj">
       <Project>{34856a71-e025-419d-a7a0-2d637cd074e3}</Project>
       <Name>HomeBudgetWeb.DAL</Name>

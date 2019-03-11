@@ -31,12 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -52,88 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\DbContext.cs" />
-    <Compile Include="EntityDbContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityDbContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityDbContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityDbContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityDbContext.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Base\IDbContext.cs" />
-    <Compile Include="Korisnik.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Logovanje.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PodvrstaTransfera.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
+    <Compile Include="KorisnikDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sp_Login_getByidKorisnik_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_PodvrstaTransfera_getByIDVrsta_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_Transfer_getByMonth_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_Transfer_getByType_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_Transfer_SaldoGodina_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_Transfer_SaldoMesec_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_Transfer_SelectBase_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_VrstaTransfera_getByType_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_VrstaTransfera_get_Result.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Transfer.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VrstaTransfera.cs">
-      <DependentUpon>EntityDbContext.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="EntityDbContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntityDbContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="EntityDbContext.edmx.diagram">
-      <DependentUpon>EntityDbContext.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EntityDbContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityDbContext.edmx</DependentUpon>
-      <LastGenOutput>EntityDbContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EntityDbContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityDbContext.edmx</DependentUpon>
-      <LastGenOutput>EntityDbContext.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -142,6 +61,10 @@
     <ProjectReference Include="..\HomeBudgetWeb.Common\HomeBudgetWeb.Common.csproj">
       <Project>{E97DA3E9-3CB3-45E1-8867-DEC47F6D6794}</Project>
       <Name>HomeBudgetWeb.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeBudgetWeb.DataObjects\HomeBudgetWeb.DataObjects.csproj">
+      <Project>{3d78a935-828d-41a4-b725-7d2def0d2088}</Project>
+      <Name>HomeBudgetWeb.DataObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

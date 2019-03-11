@@ -93,80 +93,19 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap")]
     public interface HomeBudgetWebServiceSoap {
         
-        // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldResponse HelloWorld(HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldResponse> HelloWorldAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequest request);
-        
-        // CODEGEN: Generating message contract since element name email from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikLogIn", ReplyAction="*")]
         HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse KorisnikLogIn(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikLogIn", ReplyAction="*")]
         System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse> KorisnikLogInAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequestBody Body;
+        // CODEGEN: Generating message contract since element name name from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikRegister", ReplyAction="*")]
+        HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse KorisnikRegister(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest request);
         
-        public HelloWorldRequest() {
-        }
-        
-        public HelloWorldRequest(HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWorldResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
-        
-        public HelloWorldResponseBody() {
-        }
-        
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikRegister", ReplyAction="*")]
+        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse> KorisnikRegisterAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -193,7 +132,7 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
     public partial class KorisnikLogInRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string email;
+        public string username;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string password;
@@ -201,8 +140,8 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         public KorisnikLogInRequestBody() {
         }
         
-        public KorisnikLogInRequestBody(string email, string password) {
-            this.email = email;
+        public KorisnikLogInRequestBody(string username, string password) {
+            this.username = username;
             this.password = password;
         }
     }
@@ -241,6 +180,86 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class KorisnikRegisterRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="KorisnikRegister", Namespace="http://tempuri.org/", Order=0)]
+        public HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequestBody Body;
+        
+        public KorisnikRegisterRequest() {
+        }
+        
+        public KorisnikRegisterRequest(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class KorisnikRegisterRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string surname;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string username;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string password;
+        
+        public KorisnikRegisterRequestBody() {
+        }
+        
+        public KorisnikRegisterRequestBody(string name, string surname, string username, string password) {
+            this.name = name;
+            this.surname = surname;
+            this.username = username;
+            this.password = password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class KorisnikRegisterResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="KorisnikRegisterResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponseBody Body;
+        
+        public KorisnikRegisterResponse() {
+        }
+        
+        public KorisnikRegisterResponse(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class KorisnikRegisterResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int KorisnikRegisterResult;
+        
+        public KorisnikRegisterResponseBody() {
+        }
+        
+        public KorisnikRegisterResponseBody(int KorisnikRegisterResult) {
+            this.KorisnikRegisterResult = KorisnikRegisterResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface HomeBudgetWebServiceSoapChannel : HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -269,37 +288,14 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldResponse HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.HelloWorld(HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
-        }
-        
-        public string HelloWorld() {
-            HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequest();
-            inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequestBody();
-            HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldResponse retVal = ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldResponse> HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.HelloWorldAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldResponse> HelloWorldAsync() {
-            HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequest();
-            inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.HelloWorldRequestBody();
-            return ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).HelloWorldAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.KorisnikLogIn(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest request) {
             return base.Channel.KorisnikLogIn(request);
         }
         
-        public HomeBudgetWeb.HomeBudgetWebServiceReference.Korisnik KorisnikLogIn(string email, string password) {
+        public HomeBudgetWeb.HomeBudgetWebServiceReference.Korisnik KorisnikLogIn(string username, string password) {
             HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest();
             inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequestBody();
-            inValue.Body.email = email;
+            inValue.Body.username = username;
             inValue.Body.password = password;
             HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse retVal = ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).KorisnikLogIn(inValue);
             return retVal.Body.KorisnikLogInResult;
@@ -310,12 +306,43 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
             return base.Channel.KorisnikLogInAsync(request);
         }
         
-        public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse> KorisnikLogInAsync(string email, string password) {
+        public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse> KorisnikLogInAsync(string username, string password) {
             HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest();
             inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequestBody();
-            inValue.Body.email = email;
+            inValue.Body.username = username;
             inValue.Body.password = password;
             return ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).KorisnikLogInAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.KorisnikRegister(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest request) {
+            return base.Channel.KorisnikRegister(request);
+        }
+        
+        public int KorisnikRegister(string name, string surname, string username, string password) {
+            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest();
+            inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequestBody();
+            inValue.Body.name = name;
+            inValue.Body.surname = surname;
+            inValue.Body.username = username;
+            inValue.Body.password = password;
+            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse retVal = ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).KorisnikRegister(inValue);
+            return retVal.Body.KorisnikRegisterResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse> HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.KorisnikRegisterAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest request) {
+            return base.Channel.KorisnikRegisterAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse> KorisnikRegisterAsync(string name, string surname, string username, string password) {
+            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest();
+            inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequestBody();
+            inValue.Body.name = name;
+            inValue.Body.surname = surname;
+            inValue.Body.username = username;
+            inValue.Body.password = password;
+            return ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).KorisnikRegisterAsync(inValue);
         }
     }
 }

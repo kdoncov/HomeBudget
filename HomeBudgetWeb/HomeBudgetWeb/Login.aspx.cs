@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using HomeBudgetWeb.HomeBudgetWebServiceReference;
+//using HomeBudgetWeb.HomeBudgetWebServiceReference;
 
 namespace HomeBudgetWeb
 
@@ -19,9 +19,16 @@ namespace HomeBudgetWeb
 
         }
 
-        protected void ButtonLogIn_Click(object sender, EventArgs e)
+        protected void btnLogIn_Click(object sender, EventArgs e)
         {
-            HomeBudgetWebServiceReference.Korisnik korisnik = wsProxy.KorisnikLogIn(TextBoxUsername.Text, TextBoxPassword.Text);
+            HomeBudgetWebServiceReference.Korisnik korisnik = wsProxy.KorisnikLogIn(txtUsername.Text, txtPassword.Text);
+            Response.Write("Ulogovani korisnik je " + korisnik.Ime + " " + korisnik.Prezime);
+
+        }
+
+        protected void lnkBtnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Register.aspx");
         }
     }
 }

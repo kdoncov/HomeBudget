@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HomeBudgetWebService.asmx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HomeBudgetWebService.asmx.cs">

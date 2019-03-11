@@ -20,10 +20,21 @@ namespace HomeBudgetWeb.WS
     {
 
         [WebMethod]
-        public Korisnik KorisnikLogIn(string email, string password)
+        public Korisnik KorisnikLogIn(string username, string password)
         {
             KorisnikBL korisnikBL = new KorisnikBL();
-            return korisnikBL.LogIn(email, password);
+            return korisnikBL.LogIn(username, password);
         }
+
+        [WebMethod]
+        public int KorisnikRegister(string name, string surname, string username, string password)
+        {
+            KorisnikBL korisnikBL = new KorisnikBL();
+            return korisnikBL.Register(name, surname, username, password);
+        }
+
+
+
+
     }
 }

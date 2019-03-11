@@ -21,25 +21,24 @@
                 <tr>
                     <td class="auto-style1">User name:</td>
                     <td class="auto-style1">
-                        <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtUsername" required="true" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style1">Password:</td>
                     <td class="auto-style1">
-                        <asp:TextBox ID="TextBoxPassword" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" required="true"  runat ="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="ButtonLogIn" runat="server" Text="Login" OnClick="ButtonLogIn_Click" />
+                        <asp:Button ID="btnLogIn" runat="server" Text="Login" OnClick="btnLogIn_Click" />
                     </td>
                     <td>
-                        <asp:LinkButton ID="LinkButtonRegister" runat="server">Register</asp:LinkButton>
+                        <asp:LinkButton ID="lnkBtnRegister" runat="server" OnClick="lnkBtnRegister_Click">Register</asp:LinkButton>
                     </td>
                 </tr>
             </table>
-            <br />
         </div>
     </form>
 </body>
