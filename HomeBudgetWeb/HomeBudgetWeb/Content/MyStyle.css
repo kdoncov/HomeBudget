@@ -42,10 +42,7 @@ header {
 aside {
     padding: 30px 20px;
     height: auto;
-    width: 22%;
-    position: fixed;
-    bottom: 30px;
-    top: 90px;
+    width:     top: 90px;
     z-index: 1;
     left: 0;
     overflow: auto;
@@ -91,7 +88,15 @@ aside {
 
 article {
     padding: 0;
-    width: 78%;
+    width: 80%;
+    height: 100%;
+    margin: 40px 0 30px;
+    float: right;
+    border: 1px solid rgba(12
+    float: right;
+    border: 1px solid rgba(12
+    float: right;
+    border: 1px solid rgba(12%;
     height: 100%;
     margin: 40px 0 30px;
     float: right;

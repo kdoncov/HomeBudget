@@ -33,6 +33,12 @@ namespace HomeBudgetWeb.WS
             return korisnikBL.Register(name, surname, username, password);
         }
 
+        [WebMethod]
+        public List<MesecniTransferi> MesecniTransferi(int IDKorisnika, int mesec, int vrstaTransfera, int podvrstaTransfera, bool prihodRashod)
+        {
+            TransferBL mesecniTransferiBL = new TransferBL();
+            return mesecniTransferiBL.MesecniTransferiPrikaz(IDKorisnika, mesec, vrstaTransfera, podvrstaTransfera, prihodRashod);
+        }
 
 
 

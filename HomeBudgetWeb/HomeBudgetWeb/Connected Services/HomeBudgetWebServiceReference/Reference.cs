@@ -9,73 +9,81 @@
 //------------------------------------------------------------------------------
 
 namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Korisnik", Namespace="http://tempuri.org/")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap")]
+    public interface HomeBudgetWebServiceSoap {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikLogIn", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        HomeBudgetWeb.HomeBudgetWebServiceReference.Korisnik KorisnikLogIn(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikLogIn", ReplyAction="*")]
+        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.Korisnik> KorisnikLogInAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikRegister", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int KorisnikRegister(string name, string surname, string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikRegister", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> KorisnikRegisterAsync(string name, string surname, string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MesecniTransferi", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        HomeBudgetWeb.HomeBudgetWebServiceReference.MesecniTransferi[] MesecniTransferi(int IDKorisnika, int mesec, int vrstaTransfera, int podvrstaTransfera, bool prihodRashod);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MesecniTransferi", ReplyAction="*")]
+        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.MesecniTransferi[]> MesecniTransferiAsync(int IDKorisnika, int mesec, int vrstaTransfera, int podvrstaTransfera, bool prihodRashod);
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
-    public partial class Korisnik : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Korisnik : object, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        private System.Nullable<long> idField;
         
-        private System.Nullable<long> IDField;
+        private string imeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ImeField;
+        private string prezimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PrezimeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public System.Nullable<long> ID {
             get {
-                return this.IDField;
+                return this.idField;
             }
             set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Ime {
             get {
-                return this.ImeField;
+                return this.imeField;
             }
             set {
-                if ((object.ReferenceEquals(this.ImeField, value) != true)) {
-                    this.ImeField = value;
-                    this.RaisePropertyChanged("Ime");
-                }
+                this.imeField = value;
+                this.RaisePropertyChanged("Ime");
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Prezime {
             get {
-                return this.PrezimeField;
+                return this.prezimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.PrezimeField, value) != true)) {
-                    this.PrezimeField = value;
-                    this.RaisePropertyChanged("Prezime");
-                }
+                this.prezimeField = value;
+                this.RaisePropertyChanged("Prezime");
             }
         }
         
@@ -89,174 +97,119 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap")]
-    public interface HomeBudgetWebServiceSoap {
-        
-        // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikLogIn", ReplyAction="*")]
-        HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse KorisnikLogIn(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikLogIn", ReplyAction="*")]
-        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse> KorisnikLogInAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest request);
-        
-        // CODEGEN: Generating message contract since element name name from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikRegister", ReplyAction="*")]
-        HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse KorisnikRegister(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KorisnikRegister", ReplyAction="*")]
-        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse> KorisnikRegisterAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest request);
-    }
-    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class KorisnikLogInRequest {
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class MesecniTransferi : object, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="KorisnikLogIn", Namespace="http://tempuri.org/", Order=0)]
-        public HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequestBody Body;
+        private int idField;
         
-        public KorisnikLogInRequest() {
+        private string datumField;
+        
+        private string vrstaTransferaField;
+        
+        private string vrstaTransferaOpisField;
+        
+        private string podvrstaTransferaField;
+        
+        private string podvrstaTransferaOpisField;
+        
+        private int iznosField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
         }
         
-        public KorisnikLogInRequest(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class KorisnikLogInRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string username;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string password;
-        
-        public KorisnikLogInRequestBody() {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                this.datumField = value;
+                this.RaisePropertyChanged("Datum");
+            }
         }
         
-        public KorisnikLogInRequestBody(string username, string password) {
-            this.username = username;
-            this.password = password;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class KorisnikLogInResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="KorisnikLogInResponse", Namespace="http://tempuri.org/", Order=0)]
-        public HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponseBody Body;
-        
-        public KorisnikLogInResponse() {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string VrstaTransfera {
+            get {
+                return this.vrstaTransferaField;
+            }
+            set {
+                this.vrstaTransferaField = value;
+                this.RaisePropertyChanged("VrstaTransfera");
+            }
         }
         
-        public KorisnikLogInResponse(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class KorisnikLogInResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public HomeBudgetWeb.HomeBudgetWebServiceReference.Korisnik KorisnikLogInResult;
-        
-        public KorisnikLogInResponseBody() {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string VrstaTransferaOpis {
+            get {
+                return this.vrstaTransferaOpisField;
+            }
+            set {
+                this.vrstaTransferaOpisField = value;
+                this.RaisePropertyChanged("VrstaTransferaOpis");
+            }
         }
         
-        public KorisnikLogInResponseBody(HomeBudgetWeb.HomeBudgetWebServiceReference.Korisnik KorisnikLogInResult) {
-            this.KorisnikLogInResult = KorisnikLogInResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class KorisnikRegisterRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="KorisnikRegister", Namespace="http://tempuri.org/", Order=0)]
-        public HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequestBody Body;
-        
-        public KorisnikRegisterRequest() {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string PodvrstaTransfera {
+            get {
+                return this.podvrstaTransferaField;
+            }
+            set {
+                this.podvrstaTransferaField = value;
+                this.RaisePropertyChanged("PodvrstaTransfera");
+            }
         }
         
-        public KorisnikRegisterRequest(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class KorisnikRegisterRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string name;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string surname;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string username;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string password;
-        
-        public KorisnikRegisterRequestBody() {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string PodvrstaTransferaOpis {
+            get {
+                return this.podvrstaTransferaOpisField;
+            }
+            set {
+                this.podvrstaTransferaOpisField = value;
+                this.RaisePropertyChanged("PodvrstaTransferaOpis");
+            }
         }
         
-        public KorisnikRegisterRequestBody(string name, string surname, string username, string password) {
-            this.name = name;
-            this.surname = surname;
-            this.username = username;
-            this.password = password;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class KorisnikRegisterResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="KorisnikRegisterResponse", Namespace="http://tempuri.org/", Order=0)]
-        public HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponseBody Body;
-        
-        public KorisnikRegisterResponse() {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int Iznos {
+            get {
+                return this.iznosField;
+            }
+            set {
+                this.iznosField = value;
+                this.RaisePropertyChanged("Iznos");
+            }
         }
         
-        public KorisnikRegisterResponse(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class KorisnikRegisterResponseBody {
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int KorisnikRegisterResult;
-        
-        public KorisnikRegisterResponseBody() {
-        }
-        
-        public KorisnikRegisterResponseBody(int KorisnikRegisterResult) {
-            this.KorisnikRegisterResult = KorisnikRegisterResult;
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
     }
     
@@ -287,62 +240,28 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.KorisnikLogIn(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest request) {
-            return base.Channel.KorisnikLogIn(request);
-        }
-        
         public HomeBudgetWeb.HomeBudgetWebServiceReference.Korisnik KorisnikLogIn(string username, string password) {
-            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest();
-            inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequestBody();
-            inValue.Body.username = username;
-            inValue.Body.password = password;
-            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse retVal = ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).KorisnikLogIn(inValue);
-            return retVal.Body.KorisnikLogInResult;
+            return base.Channel.KorisnikLogIn(username, password);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse> HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.KorisnikLogInAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest request) {
-            return base.Channel.KorisnikLogInAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInResponse> KorisnikLogInAsync(string username, string password) {
-            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequest();
-            inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikLogInRequestBody();
-            inValue.Body.username = username;
-            inValue.Body.password = password;
-            return ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).KorisnikLogInAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.KorisnikRegister(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest request) {
-            return base.Channel.KorisnikRegister(request);
+        public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.Korisnik> KorisnikLogInAsync(string username, string password) {
+            return base.Channel.KorisnikLogInAsync(username, password);
         }
         
         public int KorisnikRegister(string name, string surname, string username, string password) {
-            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest();
-            inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequestBody();
-            inValue.Body.name = name;
-            inValue.Body.surname = surname;
-            inValue.Body.username = username;
-            inValue.Body.password = password;
-            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse retVal = ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).KorisnikRegister(inValue);
-            return retVal.Body.KorisnikRegisterResult;
+            return base.Channel.KorisnikRegister(name, surname, username, password);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse> HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap.KorisnikRegisterAsync(HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest request) {
-            return base.Channel.KorisnikRegisterAsync(request);
+        public System.Threading.Tasks.Task<int> KorisnikRegisterAsync(string name, string surname, string username, string password) {
+            return base.Channel.KorisnikRegisterAsync(name, surname, username, password);
         }
         
-        public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterResponse> KorisnikRegisterAsync(string name, string surname, string username, string password) {
-            HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest inValue = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequest();
-            inValue.Body = new HomeBudgetWeb.HomeBudgetWebServiceReference.KorisnikRegisterRequestBody();
-            inValue.Body.name = name;
-            inValue.Body.surname = surname;
-            inValue.Body.username = username;
-            inValue.Body.password = password;
-            return ((HomeBudgetWeb.HomeBudgetWebServiceReference.HomeBudgetWebServiceSoap)(this)).KorisnikRegisterAsync(inValue);
+        public HomeBudgetWeb.HomeBudgetWebServiceReference.MesecniTransferi[] MesecniTransferi(int IDKorisnika, int mesec, int vrstaTransfera, int podvrstaTransfera, bool prihodRashod) {
+            return base.Channel.MesecniTransferi(IDKorisnika, mesec, vrstaTransfera, podvrstaTransfera, prihodRashod);
+        }
+        
+        public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.MesecniTransferi[]> MesecniTransferiAsync(int IDKorisnika, int mesec, int vrstaTransfera, int podvrstaTransfera, bool prihodRashod) {
+            return base.Channel.MesecniTransferiAsync(IDKorisnika, mesec, vrstaTransfera, podvrstaTransfera, prihodRashod);
         }
     }
 }

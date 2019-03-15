@@ -189,6 +189,10 @@ a {
     text-align: center;
 }
 
+.group .validationMessage {
+    color: yellow;
+    font-size: 12px;
+}
 /*@media only screen and (max-width: 600px) {
     .login-wrap {
         width: 100%;
