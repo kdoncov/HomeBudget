@@ -16,7 +16,7 @@ namespace HomeBudgetWeb
         {
             HomeBudgetWebServiceReference.MesecniTransferi[]  result = wsProxy.MesecniTransferi(1, 1, 1, 1, true);
 
-            gvMesecniPrihodi.DataSource = result;
+            gvMesecniPrihodi.DataSource = result.ToList();
             gvMesecniPrihodi.DataBind();
 
         }

@@ -42,7 +42,4 @@
     </div>
     <asp:GridView ID="gvMesecniPrihodi" runat="server" DataSourceID="ObjectDataSource1cfydfadfgasd"></asp:GridView>
     
-    <asp:ObjectDataSource ID="ObjectDataSource1cfydfadfgasd" runat="server"></asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="ObjectDataSourceMesecniPrihodi" runat="server"></asp:ObjectDataSource>
-    
-</asp:Content>
+    </asp:Content>

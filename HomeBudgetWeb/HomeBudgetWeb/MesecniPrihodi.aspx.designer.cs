@@ -101,23 +101,5 @@ namespace HomeBudgetWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvMesecniPrihodi;
-        
-        /// <summary>
-        /// ObjectDataSource1cfydfadfgasd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1cfydfadfgasd;
-        
-        /// <summary>
-        /// ObjectDataSourceMesecniPrihodi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceMesecniPrihodi;
     }
 }

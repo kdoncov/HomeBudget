@@ -21,7 +21,9 @@ namespace HomeBudgetWeb.DAL
         #endregion Constants
         public List<MesecniTransferi> MesecniTransferi(IDbContext dbContext, int IDKorisnika, int mesec, int vrstaTransfera, int podvrstaTransfera, bool prihodRashod)
         {
-             List<MesecniTransferi> mesecniTransferi = new List<MesecniTransferi>();
+            
+
+            List<MesecniTransferi> mesecniTransferi = new List<MesecniTransferi>();
 
             var isTransaction = true;
 
@@ -36,20 +38,20 @@ namespace HomeBudgetWeb.DAL
                 prmIdKorisnika.Value = IDKorisnika;
 
                 SqlParameter prmMesec = cmd.Parameters.Add("@Mesec", SqlDbType.Int);
-                prmIdKorisnika.Direction = ParameterDirection.Input;
-                prmIdKorisnika.Value = mesec;
+                prmMesec.Direction = ParameterDirection.Input;
+                prmMesec.Value = mesec;
 
                 SqlParameter prmVrstaTransfera = cmd.Parameters.Add("@VrstaTransfera", SqlDbType.Int);
-                prmIdKorisnika.Direction = ParameterDirection.Input;
-                prmIdKorisnika.Value = vrstaTransfera;
+                prmVrstaTransfera.Direction = ParameterDirection.Input;
+                prmVrstaTransfera.Value = vrstaTransfera;
 
                 SqlParameter prmPodvrstaTransfera = cmd.Parameters.Add("@PodvrstaTransfera", SqlDbType.Int);
-                prmIdKorisnika.Direction = ParameterDirection.Input;
-                prmIdKorisnika.Value = podvrstaTransfera;
+                prmPodvrstaTransfera.Direction = ParameterDirection.Input;
+                prmPodvrstaTransfera.Value = podvrstaTransfera;
 
                 SqlParameter prmPrihodRashod = cmd.Parameters.Add("@PrihodRashod", SqlDbType.Bit);
-                prmIdKorisnika.Direction = ParameterDirection.Input;
-                prmIdKorisnika.Value = prihodRashod;
+                prmPrihodRashod.Direction = ParameterDirection.Input;
+                prmPrihodRashod.Value = prihodRashod;
 
                 #endregion Populate Parameters
 
