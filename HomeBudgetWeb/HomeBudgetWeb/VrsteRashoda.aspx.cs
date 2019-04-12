@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace HomeBudgetWeb
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class VrsteRashoda : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["CurrentUser"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+
         }
     }
 }

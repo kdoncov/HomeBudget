@@ -35,6 +35,13 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MesecniTransferi", ReplyAction="*")]
         System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.MesecniTransferi[]> MesecniTransferiAsync(int IDKorisnika, int mesec, int vrstaTransfera, int podvrstaTransfera, bool prihodRashod);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UnosTransfera", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int UnosTransfera(int id, string date, string transferType, string transferSubType, float amount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UnosTransfera", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> UnosTransferaAsync(int id, string date, string transferType, string transferSubType, float amount);
     }
     
     /// <remarks/>
@@ -109,11 +116,11 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         
         private string datumField;
         
-        private string vrstaTransferaField;
+        private int vrstaTransferaField;
         
         private string vrstaTransferaOpisField;
         
-        private string podvrstaTransferaField;
+        private int podvrstaTransferaField;
         
         private string podvrstaTransferaOpisField;
         
@@ -145,7 +152,7 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string VrstaTransfera {
+        public int VrstaTransfera {
             get {
                 return this.vrstaTransferaField;
             }
@@ -169,7 +176,7 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string PodvrstaTransfera {
+        public int PodvrstaTransfera {
             get {
                 return this.podvrstaTransferaField;
             }
@@ -262,6 +269,14 @@ namespace HomeBudgetWeb.HomeBudgetWebServiceReference {
         
         public System.Threading.Tasks.Task<HomeBudgetWeb.HomeBudgetWebServiceReference.MesecniTransferi[]> MesecniTransferiAsync(int IDKorisnika, int mesec, int vrstaTransfera, int podvrstaTransfera, bool prihodRashod) {
             return base.Channel.MesecniTransferiAsync(IDKorisnika, mesec, vrstaTransfera, podvrstaTransfera, prihodRashod);
+        }
+        
+        public int UnosTransfera(int id, string date, string transferType, string transferSubType, float amount) {
+            return base.Channel.UnosTransfera(id, date, transferType, transferSubType, amount);
+        }
+        
+        public System.Threading.Tasks.Task<int> UnosTransferaAsync(int id, string date, string transferType, string transferSubType, float amount) {
+            return base.Channel.UnosTransferaAsync(id, date, transferType, transferSubType, amount);
         }
     }
 }

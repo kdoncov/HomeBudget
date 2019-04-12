@@ -12,54 +12,50 @@
     </asp:PlaceHolder>
     <link rel="stylesheet" href="Content/MyStyle.css" />
     <link rel="stylesheet" href="Content/normalize.css" />
+    <link rel="stylesheet" href="Content/ModalStyle.css" />
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <style type="text/css">
-        .auto-style1 {
-            height: 412px;
-            margin-left: 0;
-        }
-    </style>
-
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:scriptmanager runat="server"></asp:scriptmanager>
         <header>
+            
+                
+            
             <div>
-                <h2>Home budget</h2>
-            </div>
-            <div>
+                <p>Home budget</p>
                 <ul class="menu-list">
-                    <li><a runat="server" href="~/Rashodi">RASHODI</a></li>
-                    <li><a runat="server" href="~/Prihodi">PRIHODI</a></li>
+                    <li><a runat="server" href="~/Rashodi">PRIHODI</a></li>
+                    <li><a runat="server" href="~/Prihodi">RASHODI</a></li>
                     <li><a runat="server" href="~/Saldo">SALDO</a></li>
                 </ul>
             </div>
         </header>
         <aside>
             <ul class="aside-list">
-            <li><a href="#">Rashodi</a></li>
-                <ul class="nested-list">
-                    <li><a href="#">Mesecni rashodi</a></li>
-                    <li><a href="#">Godisnji rashodi</a></li>
-                    <li><a href="#">Vrste rashoda</a></li>
-                </ul>
             <li><a href="#">Prihodi</a></li>
                 <ul class="nested-list">
-                    <li><a href="#">Mesecni prihodi</a></li>
-                    <li><a href="#">Godisnji prihodi</a></li>
-                    <li><a href="#">Vrste prihoda</a></li>
+                    <li><a runat="server" href="MesecniPrihodi.aspx">Mesecni prihodi</a></li>
+                    <li><a runat="server" href="GodisnjiPrigodi.aspx">Godisnji prihodi</a></li>
+                    <li><a runat="server" href="VrstePrihoda.aspx">Vrste prihoda</a></li>
+                </ul>
+            <li><a href="#">Rashodi</a></li>
+                <ul class="nested-list">
+                    <li><a runat="server" href="MesecniRashodi.aspx">Mesecni rashodi</a></li>
+                    <li><a runat="server" href="GodisnjiRashodi.aspx">Godisnji rashodi</a></li>
+                    <li><a runat="server" href="VrsteRashoda.aspx">Vrste rashoda</a></li>
                 </ul>
             <li><a href="#">Saldo</a></li>
                 <ul class="nested-list">
-                    <li><a href="#">Mesecni saldo</a></li>
-                    <li><a href="#">Godisnji saldo</a></li>
+                    <li><a runat="server" href="MesecniSaldo.aspx">Mesecni saldo</a></li>
+                    <li><a runat="server" href="GodisnjiSaldo.aspx">Godisnji saldo</a></li>
                 </ul>
         </ul>
         </aside>
-        <article class="auto-style1">
+        <article>
             <asp:ContentPlaceHolder ID="MainPlaceholder" runat="server">
             </asp:ContentPlaceHolder>
         </article>

@@ -31,7 +31,7 @@
 				<div class="group">
 					<asp:Button ID="btnLogIn" runat="server" Text="Login" class="button" OnClick="btnLogIn_Click" ValidationGroup="vldLogin"/>
                     <br />
-                    <asp:Label ID="lblErrorLogin" runat="server" ViewStateMode="Disabled"></asp:Label>
+                    <asp:Label ID="lblErrorLogin" runat="server" ViewStateMode="Disabled" EnableViewState="False"></asp:Label>
                 </div>
 				
 			</div>

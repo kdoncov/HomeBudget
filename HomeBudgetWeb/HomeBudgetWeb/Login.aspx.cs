@@ -13,7 +13,7 @@ namespace HomeBudgetWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblErrorLogin.Enabled = false;
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
@@ -22,7 +22,7 @@ namespace HomeBudgetWeb
 
             if (korisnik.Ime == null || korisnik.Prezime == null)
             {
-                lblErrorLogin.Text = "Pogrešno korisničko ile ili lozinka";
+                lblErrorLogin.Text = "Pogrešno korisničko ime ili lozinka";
                 
             } else
             {
