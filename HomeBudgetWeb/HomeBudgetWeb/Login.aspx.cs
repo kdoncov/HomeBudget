@@ -42,8 +42,8 @@ namespace HomeBudgetWeb
             if (result == 1)
             {
                 //radioBtn1.Checked = true;
-                Response.Write("uspesno ste se registrovali");
-                
+                lblInfo.Text = "Uspešno ste se registrovali. Možete se prijaviti sa svojim korisničkim imenom i lozinkom";
+                lblAlreadyMember.Visible = false;
             }
             else
             {
